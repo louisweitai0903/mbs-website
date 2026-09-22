@@ -2,14 +2,14 @@
 
 ## Current version
 
-v1.1.0 — production-readiness pass (favicon, OG/Twitter cards, robots.txt,
-sitemap.xml, broken-asset fix).
+v1.1.1 — live on Vercel.
 
 ## Project health
 
 Green. Site is complete, renders correctly (verified live in-browser), and
-every referenced asset resolves and decodes correctly. Not yet deployed —
-pushed to GitHub `main`, deployment to Vercel to be done by the user.
+every referenced asset resolves and decodes correctly. **Deployed:**
+https://mbs-website-ten.vercel.app/ (connected to `main`, auto-deploys on
+push).
 
 ## Completed features
 
@@ -32,9 +32,6 @@ None currently.
 
 ## Known issues
 
-- `robots.txt`, `sitemap.xml`, and the OG/Twitter image URLs reference a
-  placeholder domain (`mbs-website.vercel.app`) — must be corrected to the
-  real deployment URL once known (see README "Deployment instructions").
 - The nav/hero brand mark is currently the Mercedes-Benz badge
   (`assets/mercedes.png`) standing in for the real MBS mark — the original
   `assets/mark.png` was corrupted on import and unrecoverable; see
@@ -56,5 +53,5 @@ None.
 ## Upcoming milestones
 
 - Client review of copy and imagery.
-- Decide on and configure a deployment target (see README "Deployment
-  instructions").
+- Optional: connect a custom domain in Vercel if the client wants one
+  instead of the `vercel.app` subdomain.

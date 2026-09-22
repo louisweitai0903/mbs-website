@@ -1,5 +1,28 @@
 # PROGRESS
 
+## 2026-09-22 — Live deploy on Vercel
+
+**Task:** Point the placeholder domain references at the real deployment
+URL once the user finished deploying on Vercel themselves.
+
+**Files modified:** `robots.txt`, `sitemap.xml`, `index.html`, `README.md`,
+`STATUS.md`.
+
+**Summary:** User deployed the repo on Vercel at
+`https://mbs-website-ten.vercel.app/` (connected to `main`, auto-deploys
+on push). Updated the `Sitemap:` line in `robots.txt`, the `<loc>` in
+`sitemap.xml`, and the `og:image`/`twitter:image` URLs in `index.html`
+from the dev-time placeholder domain to the real one. Removed the
+now-resolved "placeholder domain" caveats from README/STATUS.
+
+**Validation performed:** `curl -I` against the live URL for `/`,
+`/robots.txt`, `/assets/og-image.png`, and `/assets/mercedes.png` — all
+returned `200`.
+
+**Remaining concerns:** None outstanding from this task. Long-standing
+items (real MBS logo vs. the Mercedes badge stand-in, hardcoded
+services/roles content) are unchanged, see STATUS.md.
+
 ## 2026-09-22 — Production-readiness pass + GitHub repo
 
 **Task:** Create the `mbs-website` GitHub repo and push `main`; iterate on

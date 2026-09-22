@@ -65,18 +65,17 @@ There is no application logic to unit test. Validate changes by:
 
 ## Deployment instructions
 
-This is a static site: point any static host (Vercel, Netlify, GitHub
-Pages, S3 + CloudFront, or the client's existing web host) at this repo
-root — no build command, no output directory, no environment variables.
-Vercel/Netlify will auto-detect it as a plain static site.
+Deployed as a static site on Vercel: **https://mbs-website-ten.vercel.app/**
+(connected to the `main` branch of this repo — pushing to `main` redeploys
+automatically). No build command, no output directory, no environment
+variables required. Any other static host (Netlify, GitHub Pages, S3 +
+CloudFront) would work the same way if ever needed — point it at the repo
+root.
 
-**After the first deploy, update these two placeholders to match the real
-domain** (they currently assume `https://mbs-website.vercel.app`, a guess
-made before deployment):
-- `robots.txt` — the `Sitemap:` line
-- `sitemap.xml` — the `<loc>` value
-- `index.html` — `og:image` and `twitter:image` (must be absolute URLs for
-  link-preview crawlers to fetch them)
+If the domain ever changes (custom domain, new Vercel project, etc.),
+update it in three places: `robots.txt` (`Sitemap:` line), `sitemap.xml`
+(`<loc>`), and `index.html` (`og:image`/`twitter:image`, which must stay
+absolute URLs for link-preview crawlers to fetch them).
 
 ## Known limitations
 
@@ -85,8 +84,6 @@ made before deployment):
   compression.
 - No CMS — copy changes (services, roles, hours) require editing
   `index.html` directly.
-- `robots.txt`/`sitemap.xml`/OG tags reference a placeholder domain until
-  the real deployment URL is known (see Deployment instructions above).
 - The nav/hero brand mark uses the Mercedes-Benz badge (`assets/mercedes.png`)
   as a stand-in — the original `assets/mark.png` pulled from the Claude
   Design project was corrupted (missing image data) and had to be dropped;
@@ -96,7 +93,5 @@ made before deployment):
 
 - Swap the stand-in Mercedes-Benz badge mark for a proper MBS logo/mark if
   one exists.
-- Update the placeholder domain in `robots.txt`, `sitemap.xml`, and the OG
-  meta tags once deployed.
 - Consider a lightweight CMS or JSON data file for services/roles if they
   change often.
